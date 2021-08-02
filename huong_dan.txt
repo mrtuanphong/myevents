@@ -1,0 +1,10 @@
+Blog: https://completejavascript.com/tao-trang-blog-voi-gatsby-js
+
+Setup:
+> yarn
+
+Dev:
+> yarn start
+
+Storybook:
+> yarn run storybook
