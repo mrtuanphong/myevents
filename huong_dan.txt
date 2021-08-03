@@ -8,3 +8,6 @@ Dev:
 
 Storybook:
 > yarn run storybook
+
+Lưu ý:
+Khi dùng với github pages thì cần chỉnh thông số lệnh deploy trong package.json và thông số pathPrefix trong gatsby-config.js

@@ -9,13 +9,13 @@ module.exports = {
   siteMetadata: {
     name: `Sự kiện hàng năm`,
     author: `Phong Do`,
-    title: `Sự kiện hàng năm`,
-    description: ``,
-    keywords: ``,
-    url: "https://www.doe.com", // No trailing slash allowed!
+    title: `Sự kiện hàng năm của Phong`,
+    description: `Danh sách tổng hợp các sự kiện trong năm của Phong, sử dụng Google Sheets làm CSDL`,
+    keywords: `gatsby, events, learning, demo, google sheets`,
+    url: "https://mrtuanphong.github.io/myevents/", // No trailing slash allowed!
     image: "/images/snape.jpg", // Path to your image you placed in the 'static' folder
   },
-  pathPrefix: `/`,
+  pathPrefix: `/myevents`,
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
