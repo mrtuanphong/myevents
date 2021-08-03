@@ -1,4 +1,4 @@
-Blog: https://completejavascript.com/tao-trang-blog-voi-gatsby-js
+Data: https://docs.google.com/spreadsheets/d/1k5aMKFFg-sNGy1pwkFPai9Yl0v2iVV10Fs_n-Gnk3ek/edit#gid=1998618605
 
 Setup:
 > yarn
