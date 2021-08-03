@@ -15,6 +15,9 @@ export default () => {
   }, []);
 
   let formatTwoDigits = (digit) => ("0" + digit).slice(-2);
+  let setNewDate = (input_date) => (new Date(input_date));
+  let solarConverted = (input_date) => (input_date.getFullYear() + "" + (formatTwoDigits(input_date.getMonth()+1)) + "" + formatTwoDigits(input_date.getDate()));
+
   var tempDate = new Date();
   var date_today = `${tempDate.getFullYear()}${formatTwoDigits(tempDate.getMonth()+1)}${formatTwoDigits(tempDate.getDate())}`;
   //console.log(date_today);
@@ -45,14 +48,17 @@ export default () => {
                   <td className="p-2 align-top">
                     <div class="flex flex-wrap lg:flex-no-wrap">
                       <div className="font-semibold" title="Ngày dương">
-                        {item.solar}
+                        {formatTwoDigits(setNewDate(item.solar).getDate()+1)}/
+                        {formatTwoDigits(setNewDate(item.solar).getMonth()+1)}/
+                        {setNewDate(item.solar).getFullYear()}
+                        {/* {solarConverted(setNewDate(item.solar))} */}
                       </div>
                       <div className="text-sm lg:pl-2 text-gray-500" title="Ngày âm">
                         ({item.lunar})
                       </div>
                     </div>
-                    { parseInt(date_today) > parseInt(item.solar_converted) && <div className="text-xs">ĐÃ QUA</div>}
-                    { parseInt(date_today) === parseInt(item.solar_converted) && <div className="text-xs">HÔM NAY</div>}
+                    { parseInt(date_today) > parseInt(solarConverted(setNewDate(item.solar))) && <div className="text-xs text-gray-500">ĐÃ QUA</div>}
+                    { parseInt(date_today) === parseInt(solarConverted(setNewDate(item.solar))) && <div className="text-xs text-green-600">HÔM NAY</div>}
                   </td>
                   <td className="p-2 align-top">{item.day}</td>
                   <td className="p-2 align-top">{item.category}</td>
