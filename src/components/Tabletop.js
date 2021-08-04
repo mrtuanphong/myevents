@@ -46,7 +46,7 @@ export default () => {
                     {/* <input type="checkbox" disabled className="ml-1 text-right" checked={item.status=='TRUE' ? 'checked' : ''} /> */}
                   </td>
                   <td className="p-2 align-top">
-                    <div class="flex flex-wrap lg:flex-no-wrap">
+                    <div class="flex flex-col lg:flex-row">
                       <div className="font-semibold" title="Ngày dương">
                         {formatTwoDigits(setNewDate(item.solar).getDate()+1)}/
                         {formatTwoDigits(setNewDate(item.solar).getMonth()+1)}/
