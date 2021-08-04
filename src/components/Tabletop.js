@@ -24,20 +24,23 @@ export default () => {
 
   return (
     <>
-      <div class="text-sm lg:text-base">
+      <div className="text-sm lg:text-base">
         <p className="text-center mb-5">
           Hôm nay, ngày {formatTwoDigits(tempDate.getDate())}/{formatTwoDigits(tempDate.getMonth()+1)}/{tempDate.getFullYear()}
         </p>
         <div className="container mx-auto">
           <table className="w-full">
-            <tr className="bg-blue-800 text-white">
-              <th className="p-2 align-bottom text-right w-8" noWrap>#</th>
-              <th className="p-2 align-bottom text-left">Ngày dương/âm</th>
-              <th className="p-2 align-bottom text-left">Thứ</th>
-              <th className="p-2 align-bottom text-left">Danh mục</th>
-              <th className="p-2 align-bottom text-left">Thành viên</th>
-              <th className="p-2 align-bottom text-right">Khu vực</th>
-            </tr>
+            <thead>
+              <tr className="bg-blue-800 text-white">
+                <th className="p-2 align-bottom text-right w-8">#</th>
+                <th className="p-2 align-bottom text-left">Ngày dương/âm</th>
+                <th className="p-2 align-bottom text-left">Thứ</th>
+                <th className="p-2 align-bottom text-left">Danh mục</th>
+                <th className="p-2 align-bottom text-left">Thành viên</th>
+                <th className="p-2 align-bottom text-right">Khu vực</th>
+              </tr>
+            </thead>
+            <tbody>
             {data.map((item, i) => (
               <Fragment key={i}>
                 <tr className={`border-b border-gray-300 ${item.status=='TRUE' ? 'bg-gray-200' : 'bg-white hover:bg-blue-100'}`}>
@@ -46,16 +49,18 @@ export default () => {
                     {/* <input type="checkbox" disabled className="ml-1 text-right" checked={item.status=='TRUE' ? 'checked' : ''} /> */}
                   </td>
                   <td className="p-2 align-top">
-                    <div class="flex flex-col lg:flex-row">
+                    <div className="flex flex-col lg:flex-row">
                       <div className="font-semibold" title="Ngày dương">
                         {formatTwoDigits(setNewDate(item.solar).getDate()+1)}/
                         {formatTwoDigits(setNewDate(item.solar).getMonth()+1)}/
                         {setNewDate(item.solar).getFullYear()}
                         {/* {solarConverted(setNewDate(item.solar))} */}
                       </div>
-                      <div className="text-sm lg:pl-2 text-gray-500" title="Ngày âm">
-                        ({item.lunar})
-                      </div>
+                      {item.lunar &&
+                        <div className="text-sm lg:pl-2 text-gray-500" title="Ngày âm">
+                          ({item.lunar})
+                        </div>
+                      }
                     </div>
                     { parseInt(date_today) > parseInt(solarConverted(setNewDate(item.solar))) && <div className="text-xs text-gray-500">ĐÃ QUA</div>}
                     { parseInt(date_today) === parseInt(solarConverted(setNewDate(item.solar))) && <div className="text-xs text-green-600">HÔM NAY</div>}
@@ -67,6 +72,7 @@ export default () => {
                 </tr>
               </Fragment>
             ))}
+            </tbody>
           </table>
         </div>
       </div>
