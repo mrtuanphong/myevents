@@ -52,7 +52,7 @@ export default () => {
                     <div className="flex flex-col lg:flex-row">
                       <div className="font-semibold" title="Ngày dương">
                         {formatTwoDigits(setNewDate(item.solar).getDate())}/
-                        {formatTwoDigits(setNewDate(item.solar).getMonth())}/
+                        {formatTwoDigits(setNewDate(item.solar).getMonth()+1)}/
                         {setNewDate(item.solar).getFullYear()}
                         {/* {solarConverted(setNewDate(item.solar))} */}
                       </div>
