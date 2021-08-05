@@ -51,8 +51,8 @@ export default () => {
                   <td className="p-2 align-top">
                     <div className="flex flex-col lg:flex-row">
                       <div className="font-semibold" title="Ngày dương">
-                        {formatTwoDigits(setNewDate(item.solar).getDate()+1)}/
-                        {formatTwoDigits(setNewDate(item.solar).getMonth()+1)}/
+                        {formatTwoDigits(setNewDate(item.solar).getDate())}/
+                        {formatTwoDigits(setNewDate(item.solar).getMonth())}/
                         {setNewDate(item.solar).getFullYear()}
                         {/* {solarConverted(setNewDate(item.solar))} */}
                       </div>
