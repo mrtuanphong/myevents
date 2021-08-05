@@ -10,10 +10,14 @@ export default ({ data }) => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>{data.site.siteMetadata.title}</title>
+        <meta property="og:title" content={data.site.siteMetadata.title}></meta>
         <meta name="description" content={data.site.siteMetadata.description} />
+        <meta property="og:description" content={data.site.siteMetadata.description}></meta>
         <meta name="keywords" content={data.site.siteMetadata.keywords} />
         <meta name="author" content={data.site.siteMetadata.author} />
-        <link rel="canonical" href="http://mysite.com/example" />
+        <link rel="canonical" href={data.site.siteMetadata.url} />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <meta property="og:image" content={data.site.siteMetadata.image} />
       </Helmet>
       <h1 className="text-3xl text-center font-semibold pt-4">
         <a
@@ -38,7 +42,9 @@ export const query = graphql`
         author,
         title,
         description,
-        keywords
+        keywords,
+        url,
+        image
       }
     }
   }
