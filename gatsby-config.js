@@ -12,8 +12,8 @@ module.exports = {
     title: `Sự kiện hàng năm của Phong`,
     description: `Danh sách tổng hợp các sự kiện trong năm của Phong, sử dụng Google Sheets làm CSDL`,
     keywords: `gatsby, events, learning, demo, google sheets`,
-    url: "https://mrtuanphong.github.io/myevents", // No trailing slash allowed!
-    image: "/assets/images/fb-sharing.jpg", // Path to your image you placed in the 'static' folder
+    url: `https://mrtuanphong.github.io/myevents`, // No trailing slash allowed!
+    image: `assets/images/fb-sharing.jpg`, // Path to your image you placed in the 'static' folder
   },
   pathPrefix: `/myevents`,
   plugins: [

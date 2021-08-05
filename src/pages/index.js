@@ -16,7 +16,7 @@ export default ({ data }) => {
         <meta name="keywords" content={data.site.siteMetadata.keywords} />
         <meta name="author" content={data.site.siteMetadata.author} />
         <link rel="canonical" href={data.site.siteMetadata.url} />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
         <meta property="og:image" content={data.site.siteMetadata.image} />
       </Helmet>
       <h1 className="text-3xl text-center font-semibold pt-4">

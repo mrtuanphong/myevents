@@ -24,7 +24,7 @@ export default () => {
 
   return (
     <>
-      <div className="text-sm lg:text-base">
+      <div className="text-sm lg:text-base mb-12">
         <p className="text-center mb-5">
           Hôm nay, ngày {formatTwoDigits(tempDate.getDate())}/{formatTwoDigits(tempDate.getMonth()+1)}/{tempDate.getFullYear()}
         </p>
@@ -43,10 +43,9 @@ export default () => {
             <tbody>
             {data.map((item, i) => (
               <Fragment key={i}>
-                <tr className={`border-b border-gray-300 ${item.status=='TRUE' ? 'bg-gray-200' : 'bg-white hover:bg-blue-100'}`}>
+                <tr className={`border-b border-gray-300 ${parseInt(date_today) > parseInt(solarConverted(setNewDate(item.solar))) ? 'bg-gray-200' : 'bg-white hover:bg-blue-100'}`}>
                   <td className="p-2 align-top text-right text-gray-500">
                     {i + 1}.
-                    {/* <input type="checkbox" disabled className="ml-1 text-right" checked={item.status=='TRUE' ? 'checked' : ''} /> */}
                   </td>
                   <td className="p-2 align-top">
                     <div className="flex flex-col lg:flex-row">
